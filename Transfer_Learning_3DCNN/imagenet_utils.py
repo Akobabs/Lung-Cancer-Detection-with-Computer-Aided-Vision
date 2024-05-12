@@ -7,7 +7,6 @@ from keras import backend as K
 CLASS_INDEX = None
 CLASS_INDEX_PATH = 'https://s3.amazonaws.com/deep-learning-models/image-models/imagenet_class_index.json'
 
-
 def preprocess_input(x, dim_ordering='default'):
     if dim_ordering == 'default':
         dim_ordering = K.common.image_dim_ordering()
@@ -26,7 +25,6 @@ def preprocess_input(x, dim_ordering='default'):
         # 'RGB'->'BGR'
         x = x[:, :, :, ::-1]
     return x
-
 
 def decode_predictions(preds, top=5):
     global CLASS_INDEX
